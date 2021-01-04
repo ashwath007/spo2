@@ -11,6 +11,7 @@ class Spo2App(App):
         return AddButton(
             text="Add",
             pos=(100,100),
+            size_hint=(100,50)
         )
 
 
