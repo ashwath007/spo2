@@ -3,16 +3,16 @@ from kivy.uix.button import Button
 
 
 class AddButton(Button):
-    pass 
+    def __init__(self, **kwargs):
+        super(AddButton, self).__init__(**kwargs)
+        self.text="Add News"
+        self.pos=(100,50)
+        self.size_hint=(.25,.25)
 
 
 class Spo2App(App):
     def build(self):
-        return AddButton(
-            text="Add",
-            pos=(100,100),
-            size_hint=(100,50)
-        )
+        return AddButton()
 
 
 
