@@ -7,9 +7,9 @@ class OxWidget(Widget):
 
 
 class OxApp(App):
-    def buld(self):
+    def build(self):
         return OxWidget()
 
 
-if __name__ == '__main__':
-    OxApp().run()
+
+OxApp().run()
