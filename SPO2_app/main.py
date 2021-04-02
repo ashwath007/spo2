@@ -2,6 +2,11 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout
 import time
+
+
+import appalgo
+
+
 Builder.load_string('''
 <CameraClick>:
     orientation: 'vertical'
@@ -22,6 +27,13 @@ Builder.load_string('''
 ''')
 
 
+def runalgo(path):
+    print(path)
+    appalgo.algo(path)
+    
+
+
+
 class CameraClick(BoxLayout):
     def capture(self):
         '''
@@ -31,12 +43,18 @@ class CameraClick(BoxLayout):
         camera = self.ids['camera']
         timestr = time.strftime("%Y%m%d_%H%M%S")
         camera.export_to_png("IMG_{}.png".format(timestr))
+        saving_file = "IMG_{}.png".format(timestr)
         print("Captured")
+
+        # Call algo
+
+        runalgo(saving_file)
 
 
 class TestCamera(App):
 
     def build(self):
+        print(dir(appalgo))
         return CameraClick()
 
 
